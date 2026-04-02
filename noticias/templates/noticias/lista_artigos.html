@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Jornal de Notícias</title>
+</head>
+<body>
+    <h1>Jornal de Notícias</h1>
+    <ul>
+        {% for artigo in artigos %}
+            <li><a href="{% url 'detalhe_artigo' artigo.pk %}">{{ artigo.titulo }}</a></li>
+        {% empty %}
+            <li>Ainda não há artigos publicados.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

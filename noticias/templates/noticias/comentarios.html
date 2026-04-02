@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Comentários — {{ artigo.titulo }}</title>
+</head>
+<body>
+    <h1>Comentários: {{ artigo.titulo }}</h1>
+
+    {% for comentario in artigo.comentarios.all %}
+        <p>{{ comentario.texto }}</p>
+        <hr>
+    {% empty %}
+        <p>Ainda não há comentários.</p>
+    {% endfor %}
+
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="texto" rows="4" cols="50" placeholder="Escreve o teu comentário..."></textarea>
+        <br>
+        <button type="submit">Publicar comentário</button>
+    </form>
+
+    <br>
+    <a href="{% url 'lista_artigos' %}">Voltar à lista de artigos</a>
+</body>
+</html>
