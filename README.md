@@ -7,7 +7,7 @@ Página individual de cada artigo
 Sistema de comentários por artigo
 
 ## Como usar o projeto
-1. Intalar as dependências:
+1. Instalar as dependências:
 pip install -r requirements.txt
 
 2. Aplicar as migrações:
