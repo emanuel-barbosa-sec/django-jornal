@@ -6,7 +6,10 @@
 </head>
 <body>
     <h1>{{ artigo.titulo }}</h1>
+    <p><small>Publicado em: {{ artigo.data_de_criacao|date:"d/m/Y H:i" }}</small></p>
     <p>{{ artigo.corpo }}</p>
     <a href="{% url 'comentarios_artigo' artigo.pk %}">Ver comentários</a>
+    <br><br>
+    <a href="{% url 'lista_artigos' %}">Voltar à lista</a>
 </body>
 </html>

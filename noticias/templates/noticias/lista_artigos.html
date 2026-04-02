@@ -8,7 +8,10 @@
     <h1>Jornal de Notícias</h1>
     <ul>
         {% for artigo in artigos %}
-            <li><a href="{% url 'detalhe_artigo' artigo.pk %}">{{ artigo.titulo }}</a></li>
+            <li>
+                <a href="{% url 'detalhe_artigo' artigo.pk %}">{{ artigo.titulo }}</a>
+                — {{ artigo.data_de_criacao|date:"d/m/Y H:i" }}
+            </li>
         {% empty %}
             <li>Ainda não há artigos publicados.</li>
         {% endfor %}
